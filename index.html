@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Akram — Dev Portfolio</title>
+  <meta name="description"
+    content="Mohamed Akram - Developer & Economics Student in Algeria. AI, Data Analysis, and Programming.">
+  <!-- Retro Pixel Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="avatar.jpg">
+  <link rel="stylesheet" href="style.css?v=2.1">
+</head>
+
+<body>
+  <!-- CRT Scanline overlay effect -->
+  <div class="crt-overlay" id="crtOverlay"></div>
+
+  <!-- Sound notification toast -->
+  <div id="toast" class="pixel-toast" role="status" aria-live="polite"></div>
+
+  <!-- Page Wrapper -->
+  <div class="page-container">
+
+    <!-- Top Navigation Bar -->
+    <header class="top-nav" id="topNav">
+      <nav class="nav-links" aria-label="Main Navigation">
+        <!-- Home Link -->
+        <a href="#home" class="nav-link nav-home active" id="navHomeBtn">
+          <svg class="pixel-icon teal" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor" d="M8 1 L1 8 L3 8 L3 15 L7 15 L7 10 L9 10 L9 15 L13 15 L13 8 L15 8 Z" />
+          </svg>
+          <span>Home</span>
+        </a>
+
+        <!-- Pics of me Link -->
+        <a href="#gallery" class="nav-link nav-gallery" id="navGalleryBtn" title="View Pics of Mohamed Akram">
+          <svg class="pixel-icon pink" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor"
+              d="M2 4 h3 l1 -2 h4 l1 2 h3 v10 H2 Z M8 6 a3 3 0 1 0 0 6 a3 3 0 0 0 0 -6 Z M8 8 a1 1 0 1 1 0 2 a1 1 0 0 1 0 -2 Z" />
+          </svg>
+          <span>Pics of me</span>
+        </a>
+
+        <!-- Contact Me Link -->
+        <a href="#contact" class="nav-link nav-contact" id="navContactBtn">
+          <svg class="pixel-icon green" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor" d="M1 3 h14 v10 H1 Z M3 5 h10 v2 H3 Z M3 8 h6 v1 H3 Z M3 10 h8 v1 H3 Z" />
+          </svg>
+          <span>Contact me</span>
+        </a>
+
+        <!-- Snake Game Link -->
+        <a href="#snake" class="nav-link nav-snake" id="navSnakeBtn" title="Play 8-Bit Snake Game">
+          <svg class="pixel-icon orange" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor" d="M3 2 h5 v3 h-3 v3 h6 v-3 h2 v6 H8 v3 H3 v-6 h5 V5 H3 Z M13 8 h2 v2 h-2 Z" />
+          </svg>
+          <span>Snake Game</span>
+        </a>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="nav-actions">
+        <!-- Sound FX Toggle -->
+        <button class="icon-btn" id="soundToggle" title="Toggle 8-bit Audio SFX" aria-label="Toggle Sound">
+          <svg class="pixel-icon" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor" d="M2 5 h3 l4 -4 v14 l-4 -4 H2 Z M11 5 v1 h2 v4 h-2 v1 h3 V5 Z" />
+          </svg>
+        </button>
+
+        <!-- CRT Mode Toggle -->
+        <button class="icon-btn" id="crtToggle" title="Toggle Retro CRT Scanlines" aria-label="Toggle CRT Effect">
+          <svg class="pixel-icon" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor"
+              d="M2 3 h12 v9 H2 Z M4 13 h8 v1 H4 Z M6 14 h4 v1 H6 Z M4 5 h8 v1 H4 Z M4 7 h8 v1 H4 Z M4 9 h8 v1 H4 Z" />
+          </svg>
+        </button>
+
+        <!-- Theme Toggle (Moon/Sun) -->
+        <button class="icon-btn" id="themeToggle" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <svg class="pixel-icon moon-icon" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor" d="M6 1 A7 7 0 0 0 14 11 A8 8 0 1 1 6 1 Z" />
+          </svg>
+        </button>
+
+        <!-- Discord -->
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="icon-btn"
+          title="Discord: MohamedAkram" aria-label="Discord">
+          <svg class="pixel-icon discord-icon" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor"
+              d="M3 3 h10 v2 h-1 v6 h-1 v2 h-2 v-1 h-2 v1 h-2 v-2 h-1 v-6 h-1 Z M5 6 h2 v2 h-2 Z M9 6 h2 v2 h-2 Z" />
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-btn" title="GitHub Profile"
+          aria-label="GitHub">
+          <svg class="pixel-icon github-icon" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor"
+              d="M5 1 h6 v2 h2 v3 h1 v4 h-1 v3 h-2 v1 h-1 v-2 h-1 v2 h-1 v-2 h-1 v2 h-1 v-1 h-2 v-3 h-1 v-4 h1 v-3 h2 Z M5 6 h2 v2 h-2 Z M9 6 h2 v2 h-2 Z" />
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-btn"
+          title="LinkedIn Profile" aria-label="LinkedIn">
+          <svg class="pixel-icon linkedin-icon" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor"
+              d="M2 2 h4 v4 h-4 Z M2 7 h4 v7 h-4 Z M8 7 h4 v1 h1 v-1 h3 v7 h-4 v-4 h-1 v4 h-3 Z" />
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Two-Card Layout -->
+    <main class="main-layout" id="mainLayout">
+
+      <!-- Primary Left Card (Profile & Bio) -->
+      <section class="card primary-card" id="primaryCard">
+
+        <!-- Profile Header Area -->
+        <div class="profile-header">
+          <!-- Avatar with Cream Pixel Ring -->
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <img src="avatar.jpg" alt="Mohamed Akram Pixel Avatar" class="avatar-img" id="avatarImage">
+            </div>
+          </div>
+
+          <!-- Name & Taglines -->
+          <div class="profile-details">
+            <h1 class="pixel-name">Mohamed Akram</h1>
+            <div class="taglines">
+              <p class="tagline-line">I love algebra, coffee and Artificial Intelligence.</p>
+              <p class="tagline-line">Ai & Data science major in Economics .</p>
+              <p class="tagline-line">Economics student in Algeria.</p>
+            </div>
+
+            <!-- Tech Stack Badges Row -->
+            <div class="tech-stack-row" aria-label="Technology Stack">
+
+              <!-- Python -->
+              <div class="pixel-badge badge-python" title="Python (AI & Data Analysis)" data-tech="Python">
+                <svg viewBox="0 0 24 24" width="22" height="22" class="badge-svg">
+                  <path fill="#3776AB"
+                    d="M12 2 C7 2 7 4 7 4 L7 7 L12 7 L12 8 L5 8 C2 8 2 12 2 12 L2 15 C2 17 4 17 4 17 L6 17 L6 14 C6 13 7 12 8 12 L13 12 C14 12 15 11 15 10 L15 5 C15 2 12 2 12 2 Z M9 4 A1 1 0 1 1 9 6 A1 1 0 0 1 9 4 Z" />
+                  <path fill="#FFD43B"
+                    d="M12 22 C17 22 17 20 17 20 L17 17 L12 17 L12 16 L19 16 C22 16 22 12 22 12 L22 9 C22 7 20 7 20 7 L18 7 L18 10 C18 11 17 12 16 12 L11 12 C10 12 9 13 9 14 L9 19 C9 22 12 22 12 22 Z M15 20 A1 1 0 1 1 15 18 A1 1 0 0 1 15 20 Z" />
+                </svg>
+              </div>
+
+              <!-- JavaScript -->
+              <div class="pixel-badge badge-js" title="JavaScript (Web & Logic)" data-tech="JavaScript">
+                <span class="badge-text-js">JS</span>
+              </div>
+
+              <!-- React (Cyan Atom Orbit) -->
+              <div class="pixel-badge badge-react" title="React.js (Front-End UI)" data-tech="React">
+                <svg viewBox="0 0 32 32" width="24" height="24" class="badge-svg react-svg">
+                  <circle cx="16" cy="16" r="3.2" fill="#00d8ff" />
+                  <ellipse cx="16" cy="16" rx="13" ry="5" fill="none" stroke="#00d8ff" stroke-width="2"
+                    transform="rotate(0 16 16)" />
+                  <ellipse cx="16" cy="16" rx="13" ry="5" fill="none" stroke="#00d8ff" stroke-width="2"
+                    transform="rotate(60 16 16)" />
+                  <ellipse cx="16" cy="16" rx="13" ry="5" fill="none" stroke="#00d8ff" stroke-width="2"
+                    transform="rotate(120 16 16)" />
+                </svg>
+              </div>
+
+              <!-- Node.js -->
+              <div class="pixel-badge badge-node" title="Node.js (Backend & APIs)" data-tech="Node.js">
+                <svg viewBox="0 0 24 24" width="22" height="22" class="badge-svg">
+                  <path fill="#68a063" d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z" />
+                  <path fill="#ffffff" d="M8 8 h2 v8 h-2 Z M14 8 h2 v4 h2 v4 h-2 v-2 h-2 Z" />
+                </svg>
+              </div>
+
+              <!-- PHP -->
+              <div class="pixel-badge badge-php" title="PHP (Backend Scripting)" data-tech="PHP">
+                <span class="badge-text-php">PHP</span>
+              </div>
+
+              <!-- MySQL -->
+              <div class="pixel-badge badge-mysql" title="MySQL (Database Management)" data-tech="MySQL">
+                <span class="badge-text-mysql"><span class="my-part">My</span><span class="sql-part">SQL</span></span>
+              </div>
+
+              <!-- C -->
+              <div class="pixel-badge badge-c" title="C (Low-Level Systems)" data-tech="C">
+                <div class="c-circle">
+                  <span>C</span>
+                </div>
+              </div>
+
+              <!-- C++ -->
+              <div class="pixel-badge badge-cpp" title="C++ (Algorithms & High Performance)" data-tech="C++">
+                <div class="cpp-circle">
+                  <span>C++</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal divider line -->
+        <hr class="pixel-divider">
+
+        <!-- About Me Section -->
+        <div class="about-section">
+          <h2 class="section-title">About me</h2>
+          <div class="about-paragraphs">
+            <p>
+              I'm Mohamed Akram and I'm a developer and economics student from Algeria. I love to combine analytical
+              thinking with coding to create intelligent algorithms, automated data pipelines, and modern web tools that
+              turn complex numbers into meaningful solutions.
+            </p>
+            <p>
+              My primary passion is Artificial Intelligence and quantitative analysis, exploring how machine learning
+              models and neural networks can decode economic systems, forecast financial trends, and automate
+              intelligent reasoning.
+            </p>
+            <p>
+              As stated above, I love deep analysis and good coffee! I enjoy coding in Python and C++ for algorithms,
+              JavaScript and React for interactive interfaces, and managing structured databases with MySQL and Node.js.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Sidebar Right Column (Extra Data + My Projects in Red Zone) -->
+      <div class="sidebar-column">
+
+        <!-- Sidebar Card (Extra Data) -->
+        <aside class="card sidebar-card" id="sidebarCard">
+          <h2 class="section-title">Extra data</h2>
+
+          <div class="stats-list">
+            <div class="stat-row">
+              <span class="stat-label">Country</span>
+              <span class="stat-value">Algeria 🇩🇿</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Status</span>
+              <span class="stat-value">Student</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Field</span>
+              <span class="stat-value">Economics</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Passions</span>
+              <span class="stat-value">Software Devolepment &amp; Ai</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Coffee</span>
+              <span class="stat-value">∞ cups ☕</span>
+            </div>
+          </div>
+
+          <!-- Accent Callout Tag -->
+          <div class="sidebar-tag-wrapper">
+            <a href="#gallery" class="sidebar-tag" id="sidebarTagLink">#AlgeriaAI</a>
+          </div>
+
+          <!-- Retro Terminal Mini-Widget -->
+          <div class="mini-terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">akram@alg:~$</span>
+            </div>
+            <div class="terminal-body" id="termOutput">
+              <span class="prompt">$</span> python -c "print('Hello, World!')"<br>
+              <span class="term-green">> AI + Economics Ready.</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- My Projects Card (Placed directly in the red zone!) -->
+        <section class="card projects-sidebar-card" id="projectsSidebarCard">
+          <div class="sidebar-projects-header">
+            <h2 class="section-title">My projects</h2>
+            <span class="project-count-pill">4 REPOS</span>
+          </div>
+
+          <div class="sidebar-projects-list">
+            <!-- Project 1 -->
+            <article class="sidebar-project-item">
+              <div class="sp-header">
+                <span class="project-tag ai">AI / ML</span>
+                <span class="sp-year">2026</span>
+              </div>
+              <h3 class="sp-title">EconVision AI</h3>
+              <p class="sp-desc">LSTM &amp; econometric forecasting for market price indices.</p>
+              <div class="sp-tech">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">PyTorch</span>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="sidebar-project-item">
+              <div class="sp-header">
+                <span class="project-tag data">DATA</span>
+                <span class="sp-year">2025</span>
+              </div>
+              <h3 class="sp-title">Market Pulse Alg</h3>
+              <p class="sp-desc">Regional inflation &amp; economic index dashboard.</p>
+              <div class="sp-tech">
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">MySQL</span>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="sidebar-project-item">
+              <div class="sp-header">
+                <span class="project-tag algo">ALGO</span>
+                <span class="sp-year">2025</span>
+              </div>
+              <h3 class="sp-title">Neural Matrix Math</h3>
+              <p class="sp-desc">Fast linear algebra &amp; neural matrix routines in C++.</p>
+              <div class="sp-tech">
+                <span class="tech-pill">C++</span>
+                <span class="tech-pill">C</span>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="sidebar-project-item">
+              <div class="sp-header">
+                <span class="project-tag web">WEB</span>
+                <span class="sp-year">2024</span>
+              </div>
+              <h3 class="sp-title">Coffee &amp; Code Hub</h3>
+              <p class="sp-desc">Analytical research paper manager &amp; coffee notes.</p>
+              <div class="sp-tech">
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">JS</span>
+                <span class="tech-pill">MySQL</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      <p>© 2026 Mohamed Akram — Designed in 8-bit Retro Aesthetic</p>
+    </footer>
+
+  </div>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- ================= FULL-SCREEN PINTEREST "PICS OF ME" PAGE ================= -->
+  <div class="gallery-fullscreen-page" id="galleryModal" role="dialog" aria-modal="true"
+    aria-labelledby="galleryPageTitle">
+
+    <!-- Top Retro Navigation Bar -->
+    <header class="gallery-page-nav">
+      <div class="gallery-nav-left">
+        <button class="gallery-back-btn" id="closeGalleryBtn" title="Back to Portfolio">
+          <svg viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+            <rect x="9" y="3" width="2" height="2" fill="currentColor" />
+            <rect x="7" y="5" width="2" height="2" fill="currentColor" />
+            <rect x="5" y="7" width="2" height="2" fill="currentColor" />
+            <rect x="7" y="9" width="2" height="2" fill="currentColor" />
+            <rect x="9" y="11" width="2" height="2" fill="currentColor" />
+            <rect x="7" y="7" width="6" height="2" fill="currentColor" />
+          </svg>
+          <span>← Back to Home</span>
+        </button>
+      </div>
+
+      <div class="gallery-nav-center">
+        <div class="gallery-title-wrapper">
+          <svg class="pixel-icon pink" viewBox="0 0 16 16" width="18" height="18" shape-rendering="crispEdges">
+            <rect x="2" y="4" width="12" height="10" fill="currentColor" />
+            <rect x="5" y="2" width="6" height="2" fill="currentColor" />
+            <circle cx="8" cy="9" r="2.5" fill="#12151c" />
+          </svg>
+          <h2 class="gallery-heading" id="galleryPageTitle">PICS OF MOHAMED AKRAM</h2>
+        </div>
+      </div>
+
+      <div class="gallery-nav-right">
+      </div>
+    </header>
+
+    <!-- Main Scrollable Pinterest Masonry Board (Randomized Media Grid) -->
+    <main class="gallery-scroll-area">
+      <div class="pinterest-masonry-grid" id="pinterestGrid">
+
+        <!-- 1. Annaba Heritage -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="annaba.JPG" alt="Annaba Heritage & Coastal View" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Annaba Coastal Heritage &amp; Architecture</h3>
+            <p class="pin-tags">#Annaba &bull; #Algeria &bull; #Architecture &bull; #Travel</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Algorithmic Focus -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="pics1.jpg" alt="Algorithmic Research & Late Night Code" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Algorithmic Research &amp; Late Night Code</h3>
+            <p class="pin-tags">#AI &bull; #Python &bull; #Economics</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Mediterranean Beach -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="beach.JPG" alt="Mediterranean Beach Waves" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Mediterranean Coast &amp; Summer Waves</h3>
+            <p class="pin-tags">#Beach &bull; #Nature &bull; #Coastline &bull; #Summer</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Autoplaying Dino Game Video -->
+        <article class="pinterest-card pin-video-card">
+          <div class="pin-image-wrapper">
+            <video class="pin-img pin-video" src="cracking dino game.MP4" autoplay loop muted playsinline
+              preload="auto"></video>
+            <span class="video-badge">▶ AUTO-PLAY VIDEO</span>
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Cracking Chrome Dino Game with JS</h3>
+            <p class="pin-tags">#JavaScript &bull; #Hacking &bull; #Arcade &bull; #Code</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Gym Result -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="gym result.JPG" alt="Discipline & Workout Result" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Discipline &amp; Daily Workout Progress</h3>
+            <p class="pin-tags">#Fitness &bull; #Mindset &bull; #Consistency &bull; #Gym</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Coffee & Books -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="pics3.jpg" alt="Coffee, Books & Neural Networks" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Coffee, Books &amp; Neural Networks</h3>
+            <p class="pin-tags">#Coffee &bull; #MachineLearning &bull; #Vibes</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Aesthetic Art -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="aesthetic.jpg" alt="Cyber Neon Aesthetic" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Cyber Neon &amp; Pixel Lofi Aesthetic</h3>
+            <p class="pin-tags">#Aesthetic &bull; #PixelArt &bull; #Cyberpunk &bull; #Vibes</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. My School / Campus -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="my school.JPG" alt="Economics Campus & Faculty" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Faculty of Economics &amp; Campus Walk</h3>
+            <p class="pin-tags">#Campus &bull; #Economics &bull; #StudentLife &bull; #Algeria</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Exploring Algeria -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="picss1.jpg" alt="Exploring Horizons in Algeria" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Exploring Horizons in Algeria 🇩🇿</h3>
+            <p class="pin-tags">#Algeria &bull; #Travel &bull; #Inspiration</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Ocean Waves -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="ocean.JPG" alt="Deep Ocean Blue" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Deep Blue Waters &amp; Ocean Calm</h3>
+            <p class="pin-tags">#Ocean &bull; #Coastline &bull; #Serenity &bull; #Waves</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. C++ Matrix Math -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="picss2.jpg" alt="C++ Matrix Math & Linear Algebra" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">C++ Matrix Math &amp; Linear Algebra</h3>
+            <p class="pin-tags">#Coding &bull; #Algorithms &bull; #C++</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Peaceful Moment -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="peace.JPG" alt="Peaceful Moments" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Peaceful Moments &amp; Quiet Thought</h3>
+            <p class="pin-tags">#Peace &bull; #Quiet &bull; #Reflection &bull; #Nature</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Campus Life & Study -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="pics2.jpg" alt="Campus Life & Quantitative Study" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Campus Life &amp; Quantitative Study</h3>
+            <p class="pin-tags">#Economics &bull; #Data &bull; #Algeria</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14. Somewhere in the City -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="somewhere.JPG" alt="Lost Somewhere in Town" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Lost in Thought Somewhere in Town</h3>
+            <p class="pin-tags">#Urban &bull; #Exploration &bull; #Wanderlust &bull; #Streets</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15. Sunny Days & Tech -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="picss22.jpg" alt="Sunny Days & Creative Ideation" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Sunny Days &amp; Creative Ideation</h3>
+            <p class="pin-tags">#Lifestyle &bull; #Tech &bull; #Student</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16. Golden Hour Glow -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="IMG_0387.JPG" alt="Golden Hour Glow & Sunset Sky" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Golden Hour Glow &amp; Sunset Sky</h3>
+            <p class="pin-tags">#Sunset &bull; #GoldenHour &bull; #Atmosphere &bull; #Dusk</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 17. Building Financial Tools -->
+        <article class="pinterest-card">
+          <div class="pin-image-wrapper">
+            <img src="picssc1.jpg" alt="Building Next-Gen Financial Tools" class="pin-img" loading="lazy">
+          </div>
+          <div class="pin-meta">
+            <h3 class="pin-title">Building Next-Gen Financial Tools</h3>
+            <p class="pin-tags">#FinTech &bull; #DataScience &bull; #Web</p>
+            <div class="pin-author">
+              <img src="avatar.jpg" alt="Mohamed Akram Avatar" class="pin-avatar">
+              <span class="pin-author-name">Mohamed Akram</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- "Contact Me" Modal -->
+  <div class="retro-modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalContactTitle">
+    <div class="modal-backdrop" id="contactBackdrop"></div>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <svg class="pixel-icon green" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor" d="M1 3 h14 v10 H1 Z M3 5 h10 v2 H3 Z M3 8 h6 v1 H3 Z M3 10 h8 v1 H3 Z" />
+          </svg>
+          <h3 id="modalContactTitle">Contact Mohamed Akram</h3>
+        </div>
+        <button class="modal-close-btn" id="closeContactBtn" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="contact-intro">Let's connect! Feel free to reach out for collaboration on AI, Economics, or Web
+          projects.</p>
+
+        <div class="contact-methods">
+          <div class="contact-row">
+            <span class="contact-type">Email:</span>
+            <span class="contact-val" id="emailVal">contactakramdev23@gmail.com</span>
+            <button class="copy-btn" data-copy="contactakramdev23@gmail.com">Copy</button>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-type">instagram:</span>
+            <span class="contact-val" id="discordVal">akr4mx</span>
+            <button class="copy-btn" data-copy="akr4mx">Copy</button>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-type">Location:</span>
+            <span class="contact-val">Algiers, Algeria 🇩🇿</span>
+          </div>
+        </div>
+
+        <div class="social-links-row">
+          <a href="mailto:contactakramdev23@gmail.com" class="pixel-btn send-mail-btn">
+            ✉ Send Direct Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- "Snake Game" Modal -->
+  <div class="retro-modal" id="snakeModal" role="dialog" aria-modal="true" aria-labelledby="modalSnakeTitle">
+    <div class="modal-backdrop" id="snakeBackdrop"></div>
+    <div class="modal-window arcade-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <svg class="pixel-icon orange" viewBox="0 0 16 16" width="16" height="16">
+            <path fill="currentColor" d="M3 2 h5 v3 h-3 v3 h6 v-3 h2 v6 H8 v3 H3 v-6 h5 V5 H3 Z M13 8 h2 v2 h-2 Z" />
+          </svg>
+          <h3 id="modalSnakeTitle">Retro 8-Bit Snake</h3>
+        </div>
+        <button class="modal-close-btn" id="closeSnakeBtn" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body arcade-body">
+        <!-- Score Bar -->
+        <div class="snake-scoreboard">
+          <div class="score-box">
+            <span class="score-label">SCORE:</span>
+            <span class="score-val" id="snakeScore">0</span>
+          </div>
+          <div class="score-box">
+            <span class="score-label">BEST:</span>
+            <span class="score-val" id="snakeHighScore">0</span>
+          </div>
+          <button class="pixel-btn restart-btn" id="snakeRestartBtn">↺ Restart</button>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="canvas-wrapper">
+          <canvas id="snakeCanvas" width="360" height="360"></canvas>
+          <div class="game-overlay" id="snakeOverlay">
+            <div class="overlay-card" id="snakeOverlayCard">
+              <h4 class="overlay-title" id="overlayTitle">SNAKE ARCADE</h4>
+              <p class="overlay-sub" id="overlaySub">Use Arrow Keys or WASD</p>
+              <button class="pixel-btn start-game-btn" id="snakeStartBtn">▶ START GAME</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Touch D-Pad -->
+        <div class="mobile-dpad" id="mobileDpad">
+          <div class="dpad-row">
+            <button class="dpad-btn up" id="dpadUp" aria-label="Up">▲</button>
+          </div>
+          <div class="dpad-row">
+            <button class="dpad-btn left" id="dpadLeft" aria-label="Left">◀</button>
+            <button class="dpad-btn down" id="dpadDown" aria-label="Down">▼</button>
+            <button class="dpad-btn right" id="dpadRight" aria-label="Right">▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Retro Flip Music Player Floating Widget -->
+  <aside class="flip-music-container" id="flipMusicContainer" aria-label="Retro Music Player">
+    <div class="flip-music-panel" id="flipMusicPanel">
+      <!-- Attached Toggle Handle / Floating Tab on Left Edge -->
+      <button class="flip-music-toggle" id="flipMusicToggle" title="Open Music Player" aria-expanded="false"
+        aria-controls="flipMusicDrawer">
+        <div class="music-icon-ring" id="musicIconRing">
+          <svg class="music-note-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" fill="currentColor" />
+            <circle cx="18" cy="16" r="3" fill="currentColor" />
+          </svg>
+          <span class="music-sound-pulse"></span>
+        </div>
+        <div class="music-toggle-arrow" id="musicToggleArrow">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+            <path d="M10.5 2.5 L5 8 L10.5 13.5 L12 12 L7.8 8 L12 4 Z" />
+          </svg>
+        </div>
+      </button>
+
+      <!-- Expanded Music Drawer / Card with Swipe Views -->
+      <div class="flip-music-drawer" id="flipMusicDrawer" role="region" aria-label="Music Player Controls">
+        <div class="music-views-slider" id="musicViewsSlider">
+
+          <!-- View 1: Main Now Playing Card (Exact match to screenshot) -->
+          <div class="music-view music-view-main" id="musicViewMain">
+            <!-- Top Header with Pixel SVG Icons -->
+            <div class="music-drawer-header">
+              <div class="drawer-header-left">
+                <button class="drawer-collapse-btn" id="drawerCollapseBtn" title="Collapse Player"
+                  aria-label="Collapse">
+                  <svg viewBox="0 0 16 16" width="14" height="14" shape-rendering="crispEdges">
+                    <rect x="5" y="3" width="2" height="2" fill="currentColor" />
+                    <rect x="7" y="5" width="2" height="2" fill="currentColor" />
+                    <rect x="9" y="7" width="2" height="2" fill="currentColor" />
+                    <rect x="7" y="9" width="2" height="2" fill="currentColor" />
+                    <rect x="5" y="11" width="2" height="2" fill="currentColor" />
+                  </svg>
+                </button>
+                <div class="status-indicator">
+                  <span class="status-dot" id="musicStatusDot"></span>
+                  <span class="status-text" id="musicStatusText">PAUSED</span>
+                </div>
+              </div>
+              <div class="drawer-header-right">
+                <button class="music-hdr-btn" id="musicShuffleBtn" title="Toggle Shuffle" aria-label="Shuffle">
+                  <svg viewBox="0 0 16 16" width="14" height="14" shape-rendering="crispEdges">
+                    <rect x="2" y="3" width="2" height="2" fill="currentColor" />
+                    <rect x="4" y="5" width="2" height="2" fill="currentColor" />
+                    <rect x="6" y="7" width="4" height="2" fill="currentColor" />
+                    <rect x="10" y="9" width="2" height="2" fill="currentColor" />
+                    <rect x="12" y="11" width="2" height="2" fill="currentColor" />
+                    <rect x="2" y="11" width="2" height="2" fill="currentColor" />
+                    <rect x="4" y="9" width="2" height="2" fill="currentColor" />
+                    <rect x="10" y="5" width="2" height="2" fill="currentColor" />
+                    <rect x="12" y="3" width="2" height="2" fill="currentColor" />
+                    <rect x="12" y="5" width="2" height="2" fill="currentColor" />
+                    <rect x="10" y="3" width="2" height="2" fill="currentColor" />
+                    <rect x="12" y="9" width="2" height="2" fill="currentColor" />
+                    <rect x="10" y="11" width="2" height="2" fill="currentColor" />
+                  </svg>
+                </button>
+                <button class="music-hdr-btn" id="musicLoopBtn" title="Toggle Loop" aria-label="Loop">
+                  <svg viewBox="0 0 16 16" width="14" height="14" shape-rendering="crispEdges">
+                    <rect x="4" y="3" width="8" height="2" fill="currentColor" />
+                    <rect x="12" y="5" width="2" height="3" fill="currentColor" />
+                    <rect x="4" y="11" width="8" height="2" fill="currentColor" />
+                    <rect x="2" y="8" width="2" height="3" fill="currentColor" />
+                    <rect x="12" y="3" width="2" height="2" fill="currentColor" />
+                    <rect x="10" y="1" width="2" height="2" fill="currentColor" />
+                    <rect x="2" y="11" width="2" height="2" fill="currentColor" />
+                    <rect x="4" y="13" width="2" height="2" fill="currentColor" />
+                  </svg>
+                </button>
+                <button class="music-hdr-btn music-close-btn" id="musicCloseBtn" title="Close Player"
+                  aria-label="Close">
+                  <svg viewBox="0 0 16 16" width="12" height="12" shape-rendering="crispEdges">
+                    <rect x="3" y="3" width="2" height="2" fill="currentColor" />
+                    <rect x="11" y="3" width="2" height="2" fill="currentColor" />
+                    <rect x="5" y="5" width="2" height="2" fill="currentColor" />
+                    <rect x="9" y="5" width="2" height="2" fill="currentColor" />
+                    <rect x="7" y="7" width="2" height="2" fill="currentColor" />
+                    <rect x="5" y="9" width="2" height="2" fill="currentColor" />
+                    <rect x="9" y="9" width="2" height="2" fill="currentColor" />
+                    <rect x="3" y="11" width="2" height="2" fill="currentColor" />
+                    <rect x="11" y="11" width="2" height="2" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Full Clean Album Cover Art matching screenshot -->
+            <div class="cover-art-section">
+              <div class="cover-art-container">
+                <img src="music/covers/7am.png" alt="Song Album Cover" class="cover-art-img" id="songCoverArt">
+              </div>
+            </div>
+
+            <!-- Track Title & Artist -->
+            <div class="track-meta-section">
+              <h4 class="now-playing-title" id="nowPlayingTitle">7AM (Slowed + Reverb)</h4>
+              <p class="now-playing-artist" id="nowPlayingArtist">Unknown</p>
+              <button class="open-music-tab-btn" id="musicOpenTabBtn" title="Swipe to Playlist">Open Music Tab
+                →</button>
+            </div>
+
+            <!-- Time & Progress Bar -->
+            <div class="music-progress-section">
+              <div class="progress-track" id="musicProgressTrack">
+                <div class="progress-fill" id="musicProgressFill"></div>
+              </div>
+              <div class="time-row">
+                <span class="time-label" id="musicCurrentTime">0:00</span>
+                <span class="time-label" id="musicTotalDuration">0:00</span>
+              </div>
+            </div>
+
+            <!-- Pixel Playback Controls Row -->
+            <div class="music-controls">
+              <button class="music-ctrl-btn ctrl-prev" id="musicPrevBtn" title="Previous Track"
+                aria-label="Previous Track">
+                <svg viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+                  <!-- Pixel Bar -->
+                  <rect x="2" y="3" width="2" height="10" fill="currentColor" />
+                  <!-- Pixel Left Arrow 1 -->
+                  <rect x="8" y="7" width="2" height="2" fill="currentColor" />
+                  <rect x="10" y="5" width="2" height="6" fill="currentColor" />
+                  <rect x="12" y="3" width="2" height="10" fill="currentColor" />
+                  <!-- Pixel Left Arrow 2 -->
+                  <rect x="4" y="7" width="2" height="2" fill="currentColor" />
+                  <rect x="6" y="5" width="2" height="6" fill="currentColor" />
+                </svg>
+              </button>
+
+              <button class="music-ctrl-btn ctrl-play" id="musicPlayBtn" title="Play / Pause" aria-label="Play Track">
+                <!-- Pixel Play Arrow -->
+                <svg class="play-icon" id="musicPlayIcon" viewBox="0 0 16 16" width="22" height="22"
+                  shape-rendering="crispEdges">
+                  <rect x="4" y="2" width="2" height="12" fill="currentColor" />
+                  <rect x="6" y="4" width="2" height="8" fill="currentColor" />
+                  <rect x="8" y="6" width="2" height="4" fill="currentColor" />
+                  <rect x="10" y="7" width="2" height="2" fill="currentColor" />
+                </svg>
+                <!-- Pixel Pause Bars -->
+                <svg class="pause-icon" id="musicPauseIcon" viewBox="0 0 16 16" width="22" height="22"
+                  shape-rendering="crispEdges" style="display:none;">
+                  <rect x="4" y="3" width="3" height="10" fill="currentColor" />
+                  <rect x="9" y="3" width="3" height="10" fill="currentColor" />
+                </svg>
+              </button>
+
+              <button class="music-ctrl-btn ctrl-next" id="musicNextBtn" title="Next Track" aria-label="Next Track">
+                <svg viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+                  <!-- Pixel Right Arrow 1 -->
+                  <rect x="2" y="3" width="2" height="10" fill="currentColor" />
+                  <rect x="4" y="5" width="2" height="6" fill="currentColor" />
+                  <rect x="6" y="7" width="2" height="2" fill="currentColor" />
+                  <!-- Pixel Right Arrow 2 -->
+                  <rect x="6" y="3" width="2" height="10" fill="currentColor" />
+                  <rect x="8" y="5" width="2" height="6" fill="currentColor" />
+                  <rect x="10" y="7" width="2" height="2" fill="currentColor" />
+                  <!-- Pixel Bar -->
+                  <rect x="12" y="3" width="2" height="10" fill="currentColor" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Pixel Volume Meter Section -->
+            <div class="music-volume-section">
+              <button class="volume-btn" id="musicMuteBtn" title="Toggle Mute" aria-label="Mute">
+                <svg id="musicVolIcon" class="pixel-vol-icon" viewBox="0 0 16 16" width="15" height="15"
+                  shape-rendering="crispEdges">
+                  <!-- Pixel Speaker -->
+                  <rect x="2" y="6" width="3" height="4" fill="currentColor" />
+                  <rect x="5" y="4" width="2" height="8" fill="currentColor" />
+                  <rect x="7" y="2" width="2" height="12" fill="currentColor" />
+                  <!-- Sound Waves -->
+                  <rect x="11" y="5" width="1" height="6" fill="currentColor" />
+                  <rect x="13" y="3" width="1" height="10" fill="currentColor" />
+                </svg>
+              </button>
+
+              <!-- 8-Bit Pixel Segmented Volume Bar Meter -->
+              <div class="pixel-vol-track" id="pixelVolTrack" role="slider" aria-label="Volume" tabindex="0">
+                <div class="pixel-vol-meter" id="pixelVolMeter">
+                  <span class="p-bar active" data-val="0.1"></span>
+                  <span class="p-bar active" data-val="0.2"></span>
+                  <span class="p-bar active" data-val="0.3"></span>
+                  <span class="p-bar active" data-val="0.4"></span>
+                  <span class="p-bar active" data-val="0.5"></span>
+                  <span class="p-bar active" data-val="0.6"></span>
+                  <span class="p-bar active" data-val="0.7"></span>
+                  <span class="p-bar active" data-val="0.8"></span>
+                  <span class="p-bar" data-val="0.9"></span>
+                  <span class="p-bar" data-val="1.0"></span>
+                </div>
+              </div>
+
+              <span class="vol-label" id="musicVolLabel">80%</span>
+            </div>
+          </div>
+
+          <!-- View 2: Playlist / Music Tab View (Swiped in from right when clicking Open Music Tab) -->
+          <div class="music-view music-view-playlist" id="musicViewPlaylist">
+            <div class="music-drawer-header">
+              <button class="back-to-player-btn" id="musicBackToPlayerBtn" title="Back to Player"
+                aria-label="Back to Player">
+                ← Back to Player
+              </button>
+              <span class="playlist-header-badge">7 TRACKS</span>
+            </div>
+
+            <div class="playlist-section-card">
+              <div class="playlist-items" id="playlistItems" role="list">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Audio Element -->
+  <audio id="mainAudioPlayer" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
