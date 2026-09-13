@@ -1,214 +1,221 @@
-# Mohamed Akram — Developer Portfolio & Projects
+# 👾 Mohamed Akram — Retro 8-Bit Pixel Developer Portfolio
 
-Welcome to the official repository for **Mohamed Akram's Developer Portfolio**.
+[![Live Portfolio](https://img.shields.io/badge/Live_Demo-mohamedakram--portfolio.vercel.app-00df89?style=for-the-badge&logo=vercel&logoColor=white)](https://mohamedakram-portfolio.vercel.app)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-akr4mcodes-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akr4mcodes)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Built With](https://img.shields.io/badge/Vanilla-HTML5%20%7C%20CSS3%20%7C%20JavaScript-orange?style=for-the-badge&logo=javascript&logoColor=white)](https://developer.mozilla.org/)
 
+> A nostalgic, interactive **8-bit retro developer portfolio and arcade hub** crafted with pure vanilla web technologies, featuring Web Audio API chiptunes, a slide-out lo-fi cassette music player, playable canvas Snake arcade, CRT scanlines, and a Pinterest-style masonry gallery.
+
+---
+
+## 🌟 Overview
+
+**Mohamed Akram's Developer Portfolio** is a love letter to vintage 8-bit gaming aesthetics fused with modern web engineering. Designed and built from scratch without bulky frontend frameworks, it delivers ultra-fast load times, pixel-perfect layouts, responsive mobile adaptation, and rich tactile interactions.
+
+* **Developer:** Mohamed Akram ([@akr4mcodes](https://github.com/akr4mcodes))
+* **Location:** Annaba, Algeria 🇩🇿
+* **Specialization:** Economics & Quantitative Analysis, Artificial Intelligence, Full-Stack Web Development, Cross-Platform Mobile Apps
+
+---
+
+## ✨ Key Features & Interactive Modules
+
+### 🕹️ 1. Retro 8-Bit Aesthetics & CRT Shaders
+* **CRT Scanline Overlay:** Instant toggleable nostalgic cathode-ray-tube scanline filter (`#crtOverlay`) replicating vintage CRT monitors.
+* **Pixel Typography:** Harmonious pairing of retro Google Fonts (*Press Start 2P*, *Pixelify Sans*, *VT323*, *Silkscreen*) and the local *Determination* 8-bit font.
+* **Custom Pixelated Cursors:** Retro pixel mouse pointer, click cursor, and hover states.
+
+### 🔊 2. Procedural 8-Bit Web Audio SFX Synthesizer
+* Built with the native **Web Audio API** (`OscillatorNode`, `GainNode`).
+* Zero external audio files required for UI sound effects — procedural sound generation on the fly:
+  * **Hover Ticks:** High-frequency soft sine blips.
+  * **Button Clicks:** Crisp 8-bit square wave pulses.
+  * **Modal Open Fanfare:** Three-note arpeggio chord.
+  * **Coin / Copy Toast:** Classic arcade pickup chime.
+  * **Arcade Sounds:** Dedicated eat, die, and bonus tones for games.
+* Includes a global mute/unmute SFX toggle in the navigation bar.
+
+### 🎵 3. Retro Flip Music Player (Floating Drawer Widget)
+* **Slide-Out Drawer:** Smoothly tucked into the screen edge with an animated pulsating audio indicator ring.
+* **7 Curated Tracks:** Built-in playlist of lo-fi, synthwave, and chill tracks:
+  1. *7AM (Slowed + Reverb)*
+  2. *ISVVC - COOL WIT THE PIMP*
+  3. *MOOD - I RUN WITH TROUBLE*
+  4. *Midnight Club*
+  5. *Palace (Slowed + Reverb)*
+  6. *Sittin' Sideways*
+  7. *Tek It*
+* **Full Pixel Controls:** Play, pause, track skipping, dynamic seek bar, shuffle, and single-track repeat.
+* **10-Segment 8-Bit Volume Meter:** Interactive stepped volume controller with real-time level readout and mute toggle.
+* **Playlist Swipe View:** Seamless switch between album cover mode and tracklist selection.
+
+### 🐍 4. In-Browser 8-Bit Snake Arcade Game
+* Fully playable canvas-based retro game rendered inside a custom modal.
+* **Controls:** Keyboard navigation (Arrow keys & `WASD`) + responsive **Mobile Touch D-Pad**.
+* **High Score Tracking:** Persistent high score saved in `localStorage`.
+* Integrated retro sound effects for food eating and game over.
+
+### 🖼️ 5. Full-Screen Pinterest Masonry Gallery ("Pics of Me")
+* Immersive photo and video showcase celebrating life, university, and surroundings in Annaba, Algeria.
+* Filter tags (`#All`, `#Annaba`, `#School`, `#Aesthetic`, `#AlgeriaAI`).
+* Smooth masonry grid with image lightbox cards and video player controls.
+
+### 💻 6. Retro Terminal Mini-Widget & Tech Badges
+* Interactive Unix-styled terminal mini-widget simulating an active developer shell.
+* Interactive tech badges for **Python**, **JavaScript**, **React**, **Node.js**, **PHP**, **MySQL**, **C**, and **C++** with custom retro notification toasts.
+
+### 🌗 7. Dark / Light Mode
+* High-contrast retro Dark Mode and Light Mode with custom pixel sun/moon icons.
+* Saves theme preference to `localStorage` for returning visits.
+
+### 📋 8. Fast Contact Modal
+* One-click copy-to-clipboard for email (`contactakramdev23@gmail.com`) and Instagram (`@akr4mx`).
+* Instant retro toast notification and coin chime on copy.
+
+---
+
+## 💼 Client Services
+
+| Service | Description | Core Stack |
+| :--- | :--- | :--- |
+| **01. E-commerce Websites** | Conversion-focused storefronts, landing pages, and administrative dashboards. | React, Node.js, Firebase, Stripe |
+| **02. Portfolio & Brand Sites** | Bespoke personal and corporate identities with distinct visual flair. | HTML5, CSS3, JavaScript, Figma |
+| **03. Mobile Store Apps** | Cross-platform mobile applications for retail and ordering. | Flutter, Dart, Firebase, REST APIs |
+| **04. Business Analytics & Stats** | Quantitative market insights, econometrics, and predictive financial models. | Python, Pandas, NumPy, Scikit-Learn |
+| **05. Custom Management Software** | Tailored management suites for clinics, fitness clubs, and private practices. | Desktop & Web, SQL, Admin Dashboards |
+| **06. Automation & AI for Business** | 24/7 WhatsApp/web bots, invoice OCR extraction, and CRM workflow pipelines. | AI Agents, LLM APIs, Webhooks, Python |
+
+---
+
+## 🚀 Featured Projects Highlighted
+
+The portfolio showcases four major engineering projects:
+
+### 1. [Management Innovation Club (MIC)](https://github.com/akr4mcodes/ManagementinnovationClub)
+* **Live Demo:** [managementinnovationclub.vercel.app](https://managementinnovationclub.vercel.app/)
+* **Stack:** React.js, Tailwind CSS, Vercel
+* **Description:** Official digital platform for the *École Supérieure de Sciences de Gestion d'Annaba* (ESSG Annaba) club, providing event schedules, membership hubs, and student resources.
+
+### 2. [DragonTec Storefront](https://github.com/akr4mcodes/dragontec)
+* **Live Demo:** [dragontec.netlify.app](https://dragontec.netlify.app/)
+* **Stack:** React, Tailwind CSS, Netlify
+* **Description:** Premium e-commerce storefront dedicated to high-performance laptops and gaming gear with dynamic catalogs and responsive checkout UX.
+
+### 3. [Mobility Hub — University Hackathon](https://github.com/Sou1lah/hackathon---2026-30-04)
+* **Stack:** FastAPI (Python), React, PostgreSQL, Docker, Traefik, JWT Auth
+* **Description:** Hardened academic mobility platform streamlining international university stages and internships. Built with role-based dashboards (Student, Teacher, Master Admin) and cybersecurity protections against web vulnerabilities.
+
+### 4. [HomeBite Mobile Food Delivery](https://github.com/akr4mcodes/HomeBite)
+* **Stack:** Flutter, Dart, Firebase, Geolocation APIs
+* **Description:** Cross-platform mobile food delivery app tailored for the Algerian market, featuring localized restaurant menus, live order tracking, and DZD currency support.
+
+---
+
+## 🛠️ Technology Stack & Architecture
+
+```
+                       ┌─────────────────────────────────┐
+                       │   Portfolio In Pixels (Front)   │
+                       └────────────────┬────────────────┘
+                                        │
+         ┌──────────────────────────────┼──────────────────────────────┐
+         ▼                              ▼                              ▼
+  ┌──────────────┐              ┌──────────────┐              ┌────────────────┐
+  │  Pure HTML5  │              │ Vanilla CSS3 │              │ JavaScript ES6 │
+  │ Semantic DOM │              │ Pixel System │              │  Audio & Game  │
+  └──────────────┘              └──────────────┘              └────────────────┘
+         │                              │                              │
+         ├─ Top Navigation              ├─ 8-bit Borders & Shadows     ├─ Web Audio API (SFX)
+         ├─ Profile & Bio Cards         ├─ CRT Scanline Filter         ├─ RetroFlipMusicPlayer
+         ├─ Service Grid                ├─ CSS Grid & Masonry          ├─ Canvas Snake Engine
+         └─ Interactive Modals          └─ Dark / Light Themes         └─ Theme & LocalStorage
+```
+
+* **Frontend:** Vanilla HTML5, CSS3, JavaScript (ES6+)
+* **Audio Engine:** HTML5 Web Audio API (`AudioContext`) + `<audio>` streaming element
+* **Canvas Engine:** HTML5 Canvas 2D Rendering API
+* **Fonts:** `Press Start 2P`, `Pixelify Sans`, `VT323`, `Silkscreen`, `Determination`
+* **Zero Dependencies:** No npm runtime dependencies; ultra-lightweight and lightning fast
+* **Target Deployments:** Cloudflare Pages, Vercel, Netlify, or GitHub Pages
+
+---
+
+## 📁 Repository Structure
+
+```
+portfolio-in-pixels/
+├── determination/               # 8-bit typography assets and certificates
+│   ├── certificates/            # AI & engineering verified credentials
+│   ├── determination.ttf        # Undertale-style pixel font
+│   └── readme.txt
+├── icons and images/            # Pixel stickers, avatars, and gallery photography
+│   ├── 8-Bit Github Sticker.jpg
+│   ├── avatar.jpg
+│   ├── cursor-min.png           # Custom retro cursors
+│   └── ...                      # Masonry gallery photos & assets
+├── music/                       # Lo-fi & retro music tracks
+│   ├── covers/                  # Pixel album covers (7am, mood, isvvc, etc.)
+│   └── *.mp3                    # 7 audio tracks
+├── cracking dino game.MP4       # Showcase media
+├── index.html                   # Core semantic markup & structure
+├── style.css                    # Complete retro design system & CRT effects
+├── script.js                    # Web Audio, music player, snake game, modals
+├── package.json                 # Static site deployment manifest
+└── README.md                    # Project documentation
+```
+
+---
+
+## ⚡ Getting Started Locally
+
+Because this project is built entirely with vanilla web standards, you can run it with any static web server:
+
+### Option 1: Python (Recommended)
+```bash
+# Clone the repository
+git clone https://github.com/akr4mcodes/portfolio-in-pixels.git
+
+# Navigate into the folder
+cd portfolio-in-pixels
+
+# Start a local HTTP server
+python -m http.server 3000
+```
+Open **`http://localhost:3000`** in your browser.
+
+### Option 2: Node.js / npx
+```bash
+npx serve .
+```
+
+### Option 3: VS Code Live Server
+* Right-click [`index.html`](index.html) in VS Code or Antigravity IDE and select **"Open with Live Server"**.
+
+---
+
+## ⚙️ Customization Guide
+
+* **Adding Tracks to Music Player:**
+  1. Add your `.mp3` audio file to `music/` and cover image to `music/covers/`.
+  2. Open [`script.js`](script.js) and append a new entry to `const playlist = [...]` inside `RetroFlipMusicPlayer`.
+* **Adding or Updating Projects:**
+  1. Open [`index.html`](index.html) and locate the `<section class="card projects-sidebar-card">` section.
+  2. Add your project article following the existing structure.
+* **Adjusting Sound Effects:**
+  1. Open [`script.js`](script.js) and customize the frequencies, oscillator types (`square`, `triangle`, `sawtooth`, `sine`), or volumes in `RetroAudio`.
+
+---
+
+## 📬 Contact & Connect
+
+* **Website:** [mohamedakram-portfolio.vercel.app](https://mohamedakram-portfolio.vercel.app)
 * **GitHub:** [@akr4mcodes](https://github.com/akr4mcodes)
-* **Live Portfolio:** [mohamedakram-portfolio.vercel.app](https://mohamedakram-portfolio.vercel.app)
-* **Location:** Annaba, Algeria
-* **Focus:** AI & Data Science in Economics, Full-Stack Web Development, Mobile Engineering, Modern Algorithms
+* **Email:** [contactakramdev23@gmail.com](mailto:contactakramdev23@gmail.com)
+* **Instagram:** [@akr4m.codes](https://instagram.com/akr4mx)
 
 ---
 
-## Featured Projects
+## 📄 License
 
----
-
-# Management Innovation Club (MIC)
-
-The official digital platform for the **Management Innovation Club** at the École Supérieure de Sciences de Gestion d'Annaba (ESSG Annaba). This website serves as the central hub for our club's activities, upcoming events, and student resources, designed to foster collaboration and innovation in management.
-
-* **Live Website:** [managementinnovationclub.vercel.app](https://managementinnovationclub.vercel.app/)  
-* **GitHub Repository:** [github.com/akr4mcodes/ManagementinnovationClub](https://github.com/akr4mcodes/ManagementinnovationClub)
-
-## Built With
-
-* **Frontend:** React.js / JavaScript (ES6+)
-* **Styling:** Tailwind CSS / Custom CSS
-* **Deployment:** Vercel
-
-## Key Features
-
-* **Event Showcase:** Highlighting upcoming club events, workshops, and seminars.
-* **Student Hub:** Centralized information about MIC's mission, vision, and team members.
-* **Responsive Design:** Fully optimized for seamless browsing across desktop and mobile devices.
-* **Fast Performance:** Modern web architecture ensuring quick load times and smooth navigation.
-
-## Getting Started Locally
-
-To run this project on your local machine, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/akr4mcodes/ManagementinnovationClub.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd ManagementinnovationClub
-   ```
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-5. Open `http://localhost:3000` in your browser to view the application.
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome. Feel free to check the [issues page](https://github.com/akr4mcodes/ManagementinnovationClub/issues) if you want to contribute.
-
-## Developed By
-
-**Mohamed Akram**
-* GitHub: [@akr4mcodes](https://github.com/akr4mcodes)
-* Portfolio: [mohamedakram-portfolio.vercel.app](https://mohamedakram-portfolio.vercel.app)
-
----
-
-# DragonTec
-
-A modern e-commerce platform dedicated to high-performance laptops and premium technology accessories. DragonTec provides a seamless shopping experience with detailed product listings, sleek branding, and a responsive interface designed for tech enthusiasts.
-
-* **Live Store:** [dragontec.netlify.app](https://dragontec.netlify.app/)  
-* **GitHub Repository:** [github.com/akr4mcodes/dragontec](https://github.com/akr4mcodes/dragontec)
-
-## Key Features
-
-* **Curated Product Catalog:** Browse a specialized selection of laptops and tech accessories.
-* **Modern UI/UX:** Clean, intuitive, and responsive design optimized for desktop and mobile viewing.
-* **Dynamic Listings:** Interactive product cards and detailed item descriptions for an engaging shopping experience.
-* **Fast Hosting:** Deployed on Netlify for rapid load times and high availability.
-
-## Tech Stack
-
-* **Frontend:** React / JavaScript (ES6+)
-* **Styling:** CSS / Tailwind CSS
-* **Deployment:** Netlify
-
-## Getting Started Locally
-
-To run the DragonTec storefront on your local machine:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/akr4mcodes/dragontec.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd dragontec
-   ```
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-5. Open `http://localhost:3000` (or the port provided in your terminal) to view the app.
-
-## Developed By
-
-**Mohamed Akram**
-* GitHub: [@akr4mcodes](https://github.com/akr4mcodes)
-* Portfolio: [mohamedakram-portfolio.vercel.app](https://mohamedakram-portfolio.vercel.app)
-
----
-
-# Mobility Hub — University Hackathon 2026
-
-A hardened, full-stack educational mobility and internship platform engineered during a university hackathon. Designed to streamline academic stages, internships, and study/work abroad programs for both students and university professors.
-
-* **GitHub Repository:** [github.com/Sou1lah/hackathon---2026-30-04](https://github.com/Sou1lah/hackathon---2026-30-04)
-
-## Key Features
-
-* **Multi-Role Dashboards:** Dedicated secured portals for **Student Profiles**, **Teacher / Supervisor Evaluations**, and **Master Admin Controls**.
-* **Academic Mobility & Stages Abroad:** End-to-end management for university internship applications, stage agreements, and international exchange opportunities.
-* **Cybersecurity & Attack Defense:** Built with security-first architecture to protect sensitive academic data against web attacks, injection, and unauthorized access.
-* **Rich Backend & Email Authentication:** Complete JWT-based authentication system with secure email verification, automated transactional notifications, and PostgreSQL database persistence.
-* **Document & Workflow Processing:** Automated data extraction and validation for internship conventions and student records.
-
-## Tech Stack
-
-* **Backend:** FastAPI (Python) / Pydantic / SQLAlchemy
-* **Frontend:** React / Modern UI / TypeScript / Tailwind CSS
-* **Database:** PostgreSQL / Alembic migrations
-* **Security & Network:** Traefik reverse proxy, JWT Auth, email verification, strict CORS & rate-limiting
-* **DevOps:** Docker / Docker Compose
-
-## Getting Started Locally
-
-To run the Mobility Hub platform locally:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Sou1lah/hackathon---2026-30-04.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd hackathon---2026-30-04
-   ```
-3. **Run with Docker Compose:**
-   ```bash
-   docker compose up --build
-   ```
-4. Access the web interface at `http://localhost:5173` and the API documentation at `http://localhost:8000/docs`.
-
-## Developed By
-
-**Mohamed Akram & Team**
-* GitHub: [@akr4mcodes](https://github.com/akr4mcodes)
-* Portfolio: [mohamedakram-portfolio.vercel.app](https://mohamedakram-portfolio.vercel.app)
-
----
-
-# HomeBite — Mobile Food Delivery
-
-A mobile food delivery application designed for the Algerian market, connecting hungry customers with authentic home-cooked meals and local dining spots with real-time order tracking and localized delivery logistics.
-
-* **GitHub Repository:** [github.com/akr4mcodes/HomeBite](https://github.com/akr4mcodes/HomeBite)
-
-## Key Features
-
-* **Localized Food Catalog:** Curated authentic home-cooked meals, traditional Algerian cuisine, and local eatery menus.
-* **Real-Time Order Tracking:** Live order updates from kitchen preparation to courier dispatch and doorstep delivery.
-* **Interactive Cart & Checkout:** Seamless item customization, ingredient notes, and clear pricing in Algerian Dinar (DZD).
-* **Cross-Platform Mobile UI:** Fluid mobile experience built for both Android and iOS devices.
-* **Cloud Database & Auth:** Backend synchronization with Firebase and secure user authentication.
-
-## Tech Stack
-
-* **Framework:** Flutter (Dart)
-* **Backend & Cloud:** Firebase (Cloud Firestore, Authentication)
-* **APIs & Services:** REST APIs, Geolocation & Mapping
-* **Target Platforms:** Android / iOS
-
-## Getting Started Locally
-
-To run HomeBite on an emulator or connected device:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/akr4mcodes/HomeBite.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd HomeBite
-   ```
-3. **Get Flutter dependencies:**
-   ```bash
-   flutter pub get
-   ```
-4. **Run the mobile app:**
-   ```bash
-   flutter run
-   ```
-
-## Developed By
-
-**Mohamed Akram**
-* GitHub: [@akr4mcodes](https://github.com/akr4mcodes)
-* Portfolio: [mohamedakram-portfolio.vercel.app](https://mohamedakram-portfolio.vercel.app)
+This project is open-source under the [MIT License](LICENSE). Feel free to explore, learn, and adapt the retro pixel mechanics!
