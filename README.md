@@ -88,27 +88,16 @@
 
 ---
 
-## 🚀 Featured Projects Highlighted
+## 🚀 Featured Projects (Quick Links)
 
-The portfolio showcases four major engineering projects:
+The portfolio sidebar features direct links to selected works:
 
-### 1. [Management Innovation Club (MIC)](https://github.com/akr4mcodes/ManagementinnovationClub)
-* **Live Demo:** [managementinnovationclub.vercel.app](https://managementinnovationclub.vercel.app/)
-* **Stack:** React.js, Tailwind CSS, Vercel
-* **Description:** Official digital platform for the *École Supérieure de Sciences de Gestion d'Annaba* (ESSG Annaba) club, providing event schedules, membership hubs, and student resources.
-
-### 2. [DragonTec Storefront](https://github.com/akr4mcodes/dragontec)
-* **Live Demo:** [dragontec.netlify.app](https://dragontec.netlify.app/)
-* **Stack:** React, Tailwind CSS, Netlify
-* **Description:** Premium e-commerce storefront dedicated to high-performance laptops and gaming gear with dynamic catalogs and responsive checkout UX.
-
-### 3. [Mobility Hub — University Hackathon](https://github.com/Sou1lah/hackathon---2026-30-04)
-* **Stack:** FastAPI (Python), React, PostgreSQL, Docker, Traefik, JWT Auth
-* **Description:** Hardened academic mobility platform streamlining international university stages and internships. Built with role-based dashboards (Student, Teacher, Master Admin) and cybersecurity protections against web vulnerabilities.
-
-### 4. [HomeBite Mobile Food Delivery](https://github.com/akr4mcodes/HomeBite)
-* **Stack:** Flutter, Dart, Firebase, Geolocation APIs
-* **Description:** Cross-platform mobile food delivery app tailored for the Algerian market, featuring localized restaurant menus, live order tracking, and DZD currency support.
+| Project | Category | Tech Stack | Links |
+| :--- | :--- | :--- | :--- |
+| **Management Innovation Club** | Web Platform | React.js, Tailwind CSS | [Demo](https://managementinnovationclub.vercel.app/) · [Repo](https://github.com/akr4mcodes/ManagementinnovationClub) |
+| **DragonTec** | E-commerce | React, Tailwind CSS | [Demo](https://dragontec.netlify.app/) · [Repo](https://github.com/akr4mcodes/dragontec) |
+| **Mobility Hub** | Full-Stack Security | FastAPI, React, Docker | [Repo](https://github.com/Sou1lah/hackathon---2026-30-04) |
+| **HomeBite** | Mobile App | Flutter, Dart, Firebase | [Repo](https://github.com/akr4mcodes/HomeBite) |
 
 ---
 
