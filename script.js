@@ -100,6 +100,7 @@ class RetroAudio {
 }
 
 const sfx = new RetroAudio();
+window.retroSfx = sfx;
 
 // --- Toast Notification ---
 function showToast(message) {
@@ -122,16 +123,16 @@ const htmlEl = document.documentElement;
 const savedTheme = localStorage.getItem('akram_theme') || 'dark';
 htmlEl.setAttribute('data-theme', savedTheme);
 
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    sfx.click();
-    const currentTheme = htmlEl.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    htmlEl.setAttribute('data-theme', newTheme);
-    localStorage.setItem('akram_theme', newTheme);
-    showToast(`Switched to ${newTheme.toUpperCase()} theme!`);
-  });
+function handleThemeToggle() {
+  sfx.click();
+  const currentTheme = htmlEl.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  htmlEl.setAttribute('data-theme', newTheme);
+  localStorage.setItem('akram_theme', newTheme);
+  showToast(`Switched to ${newTheme.toUpperCase()} theme!`);
 }
+
+themeToggle?.addEventListener('click', handleThemeToggle);
 
 // --- CRT Scanlines Toggle ---
 const crtToggle = document.getElementById('crtToggle');
@@ -184,7 +185,6 @@ const closeGalleryBtn = document.getElementById('closeGalleryBtn');
 const closeContactBtn = document.getElementById('closeContactBtn');
 const closeSnakeBtn = document.getElementById('closeSnakeBtn');
 
-const galleryBackdrop = document.getElementById('galleryBackdrop');
 const contactBackdrop = document.getElementById('contactBackdrop');
 const snakeBackdrop = document.getElementById('snakeBackdrop');
 
@@ -270,7 +270,6 @@ closeGalleryBtn?.addEventListener('click', () => closeModal(galleryModal));
 closeContactBtn?.addEventListener('click', () => closeModal(contactModal));
 closeSnakeBtn?.addEventListener('click', () => closeModal(snakeModal));
 
-galleryBackdrop?.addEventListener('click', () => closeModal(galleryModal));
 contactBackdrop?.addEventListener('click', () => closeModal(contactModal));
 snakeBackdrop?.addEventListener('click', () => closeModal(snakeModal));
 
@@ -305,7 +304,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 });
 
 // --- Hover SFX for Badges & Interactive items ---
-document.querySelectorAll('.pixel-badge, .nav-link, .icon-btn, .project-card, .sidebar-tag, .copy-btn, .dpad-btn').forEach(item => {
+document.querySelectorAll('.pixel-badge, .nav-link, .icon-btn, .sidebar-project-item, .sidebar-tag, .copy-btn, .dpad-btn').forEach(item => {
   item.addEventListener('mouseenter', () => {
     sfx.hover();
   });
@@ -1110,36 +1109,6 @@ class RetroFlipMusicPlayer {
     }
   }
 
-  setupVisualizer() {
-    // If Web Audio API analyser is supported and accessible
-    try {
-      if (!this.analyser && (window.AudioContext || window.webkitAudioContext)) {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        const ctx = new AudioCtx();
-        this.analyser = ctx.createAnalyser();
-        this.analyser.fftSize = 64;
-        this.audioSource = ctx.createMediaElementSource(this.audio);
-        this.audioSource.connect(this.analyser);
-        this.analyser.connect(ctx.destination);
-
-        const dataArray = new Uint8Array(this.analyser.frequencyBinCount);
-        const updateVisuals = () => {
-          if (this.isPlaying && this.analyser) {
-            this.analyser.getByteFrequencyData(dataArray);
-            this.vbars.forEach((bar, i) => {
-              const val = dataArray[i * 2] || 0;
-              const height = Math.max(4, Math.min(30, (val / 255) * 30));
-              bar.style.height = `${height}px`;
-            });
-          }
-          this.animationFrameId = requestAnimationFrame(updateVisuals);
-        };
-        updateVisuals();
-      }
-    } catch (e) {
-      // Browsers with CORS limitations on file:// URLs will gracefully use CSS keyframe animations
-    }
-  }
 
   showToast(msg) {
     const toast = document.getElementById('toast');

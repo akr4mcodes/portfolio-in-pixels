@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-in-pixels",
+  "version": "1.0.0",
+  "description": "Mohamed Akram — Retro 8-Bit Pixel Developer Portfolio",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site ready for deployment'"
+  },
+  "keywords": [
+    "portfolio",
+    "pixel-art",
+    "retro",
+    "developer"
+  ],
+  "author": "Mohamed Akram",
+  "license": "MIT"
+}
