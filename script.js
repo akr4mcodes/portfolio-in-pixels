@@ -273,6 +273,24 @@ closeSnakeBtn?.addEventListener('click', () => closeModal(snakeModal));
 contactBackdrop?.addEventListener('click', () => closeModal(contactModal));
 snakeBackdrop?.addEventListener('click', () => closeModal(snakeModal));
 
+// Quick Launchpad Handlers
+const launchSnakeBtn = document.getElementById('launchSnakeBtn');
+const launchGalleryBtn = document.getElementById('launchGalleryBtn');
+const launchMusicBtn = document.getElementById('launchMusicBtn');
+
+launchSnakeBtn?.addEventListener('click', () => {
+  navSnakeBtn?.click();
+});
+
+launchGalleryBtn?.addEventListener('click', () => {
+  navGalleryBtn?.click();
+});
+
+launchMusicBtn?.addEventListener('click', () => {
+  const flipToggle = document.getElementById('flipMusicToggle');
+  flipToggle?.click();
+});
+
 // Ensure auto-playing gallery videos play smoothly
 function startGalleryVideos() {
   const videos = document.querySelectorAll('.pin-video');
