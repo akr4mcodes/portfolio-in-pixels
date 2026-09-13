@@ -1781,6 +1781,9 @@ h1, h2, h3, h4, h5, h6,
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 #snakeCanvas {
@@ -1788,6 +1791,7 @@ h1, h2, h3, h4, h5, h6,
   height: 100%;
   display: block;
   image-rendering: pixelated;
+  touch-action: none;
 }
 
 /* Game Overlay (Start / Game Over) */
@@ -1844,43 +1848,34 @@ h1, h2, h3, h4, h5, h6,
   background-color: #ffa94d;
 }
 
-/* Mobile Touch D-Pad */
-.mobile-dpad {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.dpad-row {
-  display: flex;
-  gap: 8px;
-}
-
-.dpad-btn {
-  width: 44px;
-  height: 44px;
-  background-color: var(--bg-nav);
-  border: 2px solid var(--border-accent);
-  color: var(--text-primary);
-  font-family: var(--font-pixel-heading);
-  font-size: 0.9rem;
-  border-radius: 6px;
+/* Snake Game Control Hints */
+.snake-controls-hint {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: url('icons and images/enter-min.png') 6 0, pointer;
-  box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
   user-select: none;
-  touch-action: manipulation;
-  transition: transform 0.05s ease, background-color 0.1s ease;
+  margin-top: 4px;
 }
 
-.dpad-btn:active {
-  transform: translateY(2px);
-  background-color: #ff922b;
-  color: #000;
+.snake-controls-hint .hint-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--bg-nav);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-pixel-heading);
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.snake-controls-hint .hint-icon {
+  font-size: 0.85rem;
 }
 
 /* ==========================================================================

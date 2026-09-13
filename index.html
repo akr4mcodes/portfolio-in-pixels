@@ -856,27 +856,21 @@
         </div>
 
         <!-- Canvas Container -->
-        <div class="canvas-wrapper">
+        <div class="canvas-wrapper" id="snakeCanvasWrapper">
           <canvas id="snakeCanvas" width="360" height="360"></canvas>
           <div class="game-overlay" id="snakeOverlay">
             <div class="overlay-card" id="snakeOverlayCard">
               <h4 class="overlay-title" id="overlayTitle">SNAKE ARCADE</h4>
-              <p class="overlay-sub" id="overlaySub">Use Arrow Keys or WASD</p>
+              <p class="overlay-sub" id="overlaySub">Arrow Keys / WASD or Swipe to Move</p>
               <button class="pixel-btn start-game-btn" id="snakeStartBtn">▶ START GAME</button>
             </div>
           </div>
         </div>
 
-        <!-- Mobile Touch D-Pad -->
-        <div class="mobile-dpad" id="mobileDpad">
-          <div class="dpad-row">
-            <button class="dpad-btn up" id="dpadUp" aria-label="Up">▲</button>
-          </div>
-          <div class="dpad-row">
-            <button class="dpad-btn left" id="dpadLeft" aria-label="Left">◀</button>
-            <button class="dpad-btn down" id="dpadDown" aria-label="Down">▼</button>
-            <button class="dpad-btn right" id="dpadRight" aria-label="Right">▶</button>
-          </div>
+        <!-- Snake Game Control Hints -->
+        <div class="snake-controls-hint" aria-label="Game Controls">
+          <span class="hint-badge"><span class="hint-icon">⌨️</span> Keyboard: Arrows / WASD</span>
+          <span class="hint-badge"><span class="hint-icon">👆</span> Phone: Swipe to Turn</span>
         </div>
       </div>
     </div>

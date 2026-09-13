@@ -440,23 +440,110 @@ class SnakeGame {
       }
     });
 
-    // Touch D-Pad buttons
-    document.getElementById('dpadUp')?.addEventListener('click', () => {
-      if (this.dir.y === 0) this.nextDir = { x: 0, y: -1 };
-      sfx.hover();
-    });
-    document.getElementById('dpadDown')?.addEventListener('click', () => {
-      if (this.dir.y === 0) this.nextDir = { x: 0, y: 1 };
-      sfx.hover();
-    });
-    document.getElementById('dpadLeft')?.addEventListener('click', () => {
-      if (this.dir.x === 0) this.nextDir = { x: -1, y: 0 };
-      sfx.hover();
-    });
-    document.getElementById('dpadRight')?.addEventListener('click', () => {
-      if (this.dir.x === 0) this.nextDir = { x: 1, y: 0 };
-      sfx.hover();
-    });
+    // Phone Touch Swipe Controller
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    const minSwipeDistance = 20; // Minimum pixel delta for responsive swipe turn
+
+    const canvasWrapper = document.getElementById('snakeCanvasWrapper') || this.canvas;
+
+    const handleTouchStart = (e) => {
+      if (!e.touches || e.touches.length === 0) return;
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      touchStartTime = Date.now();
+    };
+
+    const handleTouchMove = (e) => {
+      if (!e.touches || e.touches.length === 0) return;
+      if (e.cancelable) e.preventDefault(); // Stop mobile elastic scroll during snake movement
+
+      if (!this.running) return;
+
+      const touch = e.touches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      if (Math.max(absDx, absDy) >= minSwipeDistance) {
+        if (absDx > absDy) {
+          // Horizontal turn
+          if (dx > 0) {
+            if (this.dir.x === 0) {
+              this.nextDir = { x: 1, y: 0 };
+              sfx.hover();
+            }
+          } else {
+            if (this.dir.x === 0) {
+              this.nextDir = { x: -1, y: 0 };
+              sfx.hover();
+            }
+          }
+        } else {
+          // Vertical turn
+          if (dy > 0) {
+            if (this.dir.y === 0) {
+              this.nextDir = { x: 0, y: 1 };
+              sfx.hover();
+            }
+          } else {
+            if (this.dir.y === 0) {
+              this.nextDir = { x: 0, y: -1 };
+              sfx.hover();
+            }
+          }
+        }
+        // Advance touch anchor for continuous chaining of swipes without lifting finger
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+      }
+    };
+
+    const handleTouchEnd = (e) => {
+      // Tap to start when game is not running
+      if (!this.running) {
+        const timeDiff = Date.now() - touchStartTime;
+        if (timeDiff < 300) {
+          this.start();
+        }
+        return;
+      }
+
+      if (e.changedTouches && e.changedTouches.length > 0) {
+        const touch = e.changedTouches[0];
+        const dx = touch.clientX - touchStartX;
+        const dy = touch.clientY - touchStartY;
+        const absDx = Math.abs(dx);
+        const absDy = Math.abs(dy);
+
+        if (Math.max(absDx, absDy) >= minSwipeDistance) {
+          if (absDx > absDy) {
+            if (dx > 0 && this.dir.x === 0) {
+              this.nextDir = { x: 1, y: 0 };
+              sfx.hover();
+            } else if (dx < 0 && this.dir.x === 0) {
+              this.nextDir = { x: -1, y: 0 };
+              sfx.hover();
+            }
+          } else {
+            if (dy > 0 && this.dir.y === 0) {
+              this.nextDir = { x: 0, y: 1 };
+              sfx.hover();
+            } else if (dy < 0 && this.dir.y === 0) {
+              this.nextDir = { x: 0, y: -1 };
+              sfx.hover();
+            }
+          }
+        }
+      }
+    };
+
+    canvasWrapper.addEventListener('touchstart', handleTouchStart, { passive: true });
+    canvasWrapper.addEventListener('touchmove', handleTouchMove, { passive: false });
+    canvasWrapper.addEventListener('touchend', handleTouchEnd, { passive: true });
   }
 
   start() {

@@ -52,7 +52,7 @@
 
 ### 🐍 4. In-Browser 8-Bit Snake Arcade Game
 * Fully playable canvas-based retro game rendered inside a custom modal.
-* **Controls:** Keyboard navigation (Arrow keys & `WASD`) + responsive **Mobile Touch D-Pad**.
+* **Controls:** Keyboard navigation (Arrow keys & `WASD`) + fluid **Mobile Touch Swiping** (Up, Down, Left, Right).
 * **High Score Tracking:** Persistent high score saved in `localStorage`.
 * Integrated retro sound effects for food eating and game over.
 
